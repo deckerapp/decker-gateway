@@ -58,13 +58,13 @@ class Registry:
                 ):
                     if session['id'] == session_id:
                         assert not isinstance(session['session'], str)
-                        sesh = session['session']
+                        session2 = session['session']
 
-                        if sesh.floodgates_open:
-                            await sesh.send(event)
+                        if session2.floodgates_open:
+                            await session2.send(event)
                         else:
                             await self.append_queue(
-                                session_id=sesh.session_id, event=event
+                                session_id=session2.session_id, event=event
                             )
 
     async def handle_user_id_event(self, event: Event) -> None:

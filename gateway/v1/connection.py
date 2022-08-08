@@ -103,12 +103,12 @@ class v1Session(BaseSession):
         if self.compress is True:
             await self._socket.send(
                 yield_chunks(
-                    encode(
+                    input_size=encode(
                         data=new_data,
                         compressor=self._compressor,
                         encoding=self.encoding,
                     ),
-                    1024,
+                    chunk_size=1024,
                 )
             )
         else:
