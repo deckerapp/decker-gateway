@@ -22,7 +22,7 @@ async def start():
     async with websockets.server.serve(
         on_connection, '0.0.0.0', 6000, ping_interval=32, ping_timeout=32
     ):
-        sentry_sdk.init(dsn=os.getenv('SENTRY_DSN'), traces_sample_rate=1.0)
+        sentry_sdk.init(dsn=os.environ['SENTRY_DSN'], traces_sample_rate=1.0)
         connect()
         print('DEBUG:Starting to serve on port 6000', file=sys.stderr)
         await asyncio.Future()
