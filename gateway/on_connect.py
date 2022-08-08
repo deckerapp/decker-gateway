@@ -32,7 +32,7 @@ async def on_connection(ws: WebSocketServerProtocol, url: str):
     try:
         compress = settings['compress'][0]
     except SETTING_NOT_FOUND:
-        compress = 'false'
+        compress = False
     else:
         if compress == 'true':
             compress = True
