@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "gateway"
+version = "0.0.0"
+description = ""
+authors = ["VincentRPS <vincentbusiness55@gmail.com>"]
+license = "ELv2"
+
+[tool.isort]
+profile = 'black'
+
+[tool.black]
+target-version = ['py310']
+skip-string-normalization = true
+
+[tool.poetry.dependencies]
+python = "~3.10"
+websockets = "^10.3"
+msgspec = "^0.7.1"
+aiokafka = "^0.7.2"
+uvloop = {version = "^0.16.0", platform = "linux"}
+sentry-sdk = "^1.9.2"
+itsdangerous = "^2.1.2"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
