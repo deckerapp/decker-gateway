@@ -1,7 +1,7 @@
 """
 Elastic License 2.0
 
-Copyright Elasic and/or licensed to Elasic under one
+Copyright Discend and/or licensed to Discend under one
 or more contributor license agreements. Licensed under the Elastic License;
 you may not use this file except in compliance with the Elastic License.
 """
@@ -284,11 +284,11 @@ class v1Session(BaseSession):
     def _get_client_status(self) -> str:
         dev = self.identify.properties.device
 
-        if dev == 'Elasic Mobile':
+        if dev == 'Discend Mobile':
             return 'mobile'
-        elif dev == 'Elasic Web':
+        elif dev == 'Discend Web':
             return 'web'
-        elif dev == 'Elasic Desktop':
+        elif dev == 'Discend Desktop':
             return 'desktop'
         else:
             return 'unknown'
